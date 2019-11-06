@@ -1,0 +1,27 @@
+docker run -v ~/udacity/blockchain/project5_real-estate-market-DOESNTRUN/zokrates/code/square:/home/zokrates/code -ti zokrates/zokrates /bin/bash
+
+Run a previous version: 0.3
+docker run -v ~/udacity/blockchain/project5_real-estate-market-DOESNTRUN/zokrates/code/square:/home/zokrates/code -ti zokrates/zokrates:0.3.0 /bin/bash
+
+./zokrates compile -i code/square.code
+
+./zokrates setup 
+
+./zokrates compute-witness -a 3 9
+
+./zokrates generate-proof  
+
+./zokrates export-verifier 
+
+
+Running with PGHR13 proving scheme in /code directory:
+
+~/zokrates compile -i square.code
+
+~/zokrates setup --proving-scheme pghr13
+
+~/zokrates compute-witness -a 3 9
+
+~/zokrates generate-proof --proving-scheme pghr13
+
+~/zokrates export-verifier --proving-scheme pghr13
